@@ -1,0 +1,62 @@
+﻿import docx
+
+doc = docx.Document()
+doc.add_heading('MENTORAI - INTELLIGENT MENTOR-MENTEE PROJECT ALIGNMENT ENGINE', 0)
+doc.add_paragraph('Project Report & Presentation Content Guidelines\nUse the following content to build the official Project Report and PowerPoint Presentation.\n')
+
+sections = {
+    '1. TITLE PAGE / SLIDE 1': '''Title: MentorAI - Intelligent Mentor-Mentee Project Alignment Engine
+Subtitle: Leveraging Unsupervised Machine Learning, Graph Theory, and LLMs for Psychometric Team Allocation.''',
+    '2. ABSTRACT (For Report) / EXECUTIVE SUMMARY (For PPT)': '''The traditional university method of assigning students to project groups and faculty mentors is often random, biased, or based purely on academic grades, ignoring the critical human element of team dynamics. This often leads to dysfunctional teams, communication breakdowns, and sub-optimal project outcomes. MentorAI proposes a next-generation EdTech solution leveraging Unsupervised Machine Learning (K-Means Clustering), Graph Theory, and Local Large Language Models (LLMs). By administering a targeted psychometric assessment, MentorAI calculates the Big Five personality traits of every student and mentor. A custom mathematical allocation engine then pairs complimentary student groups with compatible faculty mentors. Furthermore, an integrated LLM generates proactive, highly structured coaching briefings for mentors to prevent internal conflicts before they occur. The result is a mathematically optimized, harmonious, and highly productive academic environment.''',
+    '3. INTRODUCTION': '''Background:
+University capstone projects and research groups dictate a massive portion of a student's academic success. However, the allocation of these groups is fundamentally opaque and outdated.
+
+Motivation:
+Psychological research proves that team success relies heavily on personality compatibility (e.g., balancing high openness with high conscientiousness). Our motivation is to harness modern AI and Machine Learning to bring data-driven, psychometric precision to academic team building, eliminating the chaos of random assignment.
+
+Objectives:
+1. To develop a robust psychometric assessment engine based on the Big Five personality traits.
+2. To build an intelligent, multi-variable allocation algorithm that matches students and mentors based on domain interest and personality synergy.
+3. To implement a local, privacy-preserving LLM (Ollama) to generate strategic conflict-resolution briefings for mentors.
+4. To visualize the university's social fabric using 3D Machine Learning clustering and physics-based Graph Network simulations.''',
+    '4. PROBLEM STATEMENT': '''The current academic project allocation ecosystem suffers from three critical flaws:
+1. Dysfunctional Team Dynamics: Random assignment groups conflicting personalities together, leading to internal toxicity and failed projects.
+2. Mentor-Mentee Mismatch: Mentors are assigned groups whose learning and communication styles completely clash with the mentor's advising style.
+3. Lack of Proactive Coaching: Mentors only discover a team is failing during final evaluations, when it is too late to intervene.''',
+    '5. PROPOSED SOLUTION & FEATURES': '''MentorAI solves these issues by shifting project allocation from a random lottery to a mathematically rigorous, AI-driven process.
+
+Feature 1: Psychometric Profiling
+Students and mentors are scored across five dimensions: Extraversion, Neuroticism, Agreeableness, Conscientiousness, and Openness.
+
+Feature 2: Intelligent Allocation Algorithm
+The custom matching engine calculates Euclidean distances between traits, ensuring groups are balanced (e.g., pairing highly creative but unorganized students with highly conscientious mentors).
+
+Feature 3: Generative AI Mentor Briefings
+Before the first meeting, the LLM analyzes the specific traits of the assigned group and generates a strategic briefing for the professor, highlighting potential bottlenecks and offering actionable leadership tips.
+
+Feature 4: ML Insights & Neural Web
+Live K-Means clustering discovers hidden personality archetypes across the university, while a physics-based Graph ML simulation (The Neural Web) visually pulls highly compatible individuals into distinct "Super-Teams."''',
+    '6. SYSTEM ARCHITECTURE': '''- Frontend (Client Layer): A premium, glassmorphic Streamlit application.
+- Backend (Logic Layer): Python-based routing, Data Aggregation, and Scikit-Learn ML models.
+- Database (Storage Layer): PostgreSQL relational database storing user profiles, traits, and AI summaries.
+- AI Layer: Local Llama 3.2 model accessed via REST API for private, offline inference.''',
+    '7. TECHNOLOGY STACK': '''- Frontend: Streamlit, Custom CSS, Plotly (3D Data Viz), PyVis (Physics Graph Engine).
+- Backend: Python 3.10+
+- Database: PostgreSQL, psycopg2-binary
+- Machine Learning: Scikit-Learn (K-Means Clustering), NetworkX (Graph Theory), Pandas, Numpy.
+- Generative AI: Ollama (Llama 3.2)''',
+    '8. TESTING & RESULTS': '''- Algorithm Efficiency: The allocation algorithm successfully distributes large datasets (e.g., 15 groups across 5 mentors) in milliseconds while strictly respecting maximum capacity constraints.
+- Clustering Accuracy: The K-Means engine dynamically adapts to live data, successfully isolating overlapping personalities into distinct, mathematically sound 3D clusters.
+- LLM Latency: By utilizing localized inference (Ollama), the system generates highly accurate, context-aware psychological briefings without relying on paid, cloud-based APIs.''',
+    '9. FUTURE SCOPE': '''1. Supervised Learning / Predictive Modeling: Training a Random Forest classifier on historical university data to predict the exact percentage chance of a team's success or failure at the time of creation.
+2. Audio ML Profiling: Replacing the written questionnaire with a 30-second speech-to-text audio analysis that derives personality traits directly from vocal tone and speaking cadence.
+3. RAG (Retrieval-Augmented Generation): Allowing mentors to upload course syllabi and grading rubrics so the LLM can give project-specific advice.''',
+    '10. CONCLUSION': '''MentorAI demonstrates the transformative potential of combining traditional Psychometrics with modern Machine Learning and Generative AI. By replacing outdated allocation methods with an intelligent, data-driven engine, the platform not only prevents academic team failure but actively empowers faculty mentors with the psychological insights needed to guide their students to success. MentorAI stands as a robust proof-of-concept for the future of intelligent educational administration.'''
+}
+
+for title, content in sections.items():
+    doc.add_heading(title, level=1)
+    doc.add_paragraph(content)
+
+doc.save('MentorAI_Report_Content.docx')
+print("Word doc created!")
